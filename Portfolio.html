@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sourav Sutradhar | Portfolio</title>
+    <style>
+        /* Base Styles & Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #1e293b;
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
+
+        /* Sections General */
+        section {
+            padding: 80px 5% 60px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            position: relative;
+            color: #0f172a;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background-color: #38bdf8;
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top: 0;
+        }
+
+        #hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        #hero h1 span {
+            color: #38bdf8;
+        }
+
+        #hero p {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background-color: #38bdf8;
+            color: #0f172a;
+            padding: 10px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0ea5e9;
+        }
+
+        /* About Section */
+        .about-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            background: #fff;
+            padding: 20px;
+            border-left: 4px solid #38bdf8;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .timeline-item h3 {
+            color: #0f172a;
+        }
+
+        .timeline-item .company {
+            font-style: italic;
+            color: #64748b;
+            margin-bottom: 10px;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #e2e8f0;
+            color: #475569;
+            padding: 2px 8px;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            margin-right: 5px;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .skill-badge {
+            background: #1e293b;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 0.9.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* Contact Section */
+        #contact {
+            text-align: center;
+        }
+
+        .contact-info {
+            font-size: 1.1rem;
+            margin-top: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0f172a;
+            color: #718096;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Can be expanded with JS, keeping it simple for now */
+            }
+            #hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Sourav Sutradhar.</div>
+            <ul class="nav-links">
+                <li><a href="#hero">হোম</a></li>
+                <li><a href="#about">পরিচিতি</a></li>
+                <li><a href="#experience">অভিজ্ঞতা</a></li>
+                <li><a href="#projects">প্রজেক্টস</a></li>
+                <li><a href="#skills">স্কিলস</a></li>
+                <li><a href="#contact">যোগাযোগ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <h1>হ্যালো, আমি <span>Sourav Sutradhar</span></h1>
+        <p>B.Sc. in EEE Student & Service Engineer (BMS Operator)। আমি মূলত ইন্ডাস্ট্রিয়াল অটোমেশন, কন্ট্রোল সিস্টেম এবং কম্পিউটার ভিশন প্রজেক্ট নিয়ে কাজ করতে পছন্দ করি।</p>
+        <a href="#contact" class="btn">যোগাযোগ করুন</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">আমার সম্পর্কে</h2>
+        <div class="about-content">
+            <p>আমি বর্তমানে **ICEL Private Limited**-এ একজন সার্ভিস ইঞ্জিনিয়ার ও বিএমএস অপারেটর হিসেবে কর্মরত আছি এবং একই সাথে **Electrical and Electronic Engineering (EEE)**-এ আমার ব্যাচেলর ডিগ্রি সম্পন্ন করছি। তাত্ত্বিক শিক্ষার পাশাপাশি বাস্তব কর্মক্ষেত্রে টেকনিক্যাল সমস্যার সমাধান করা এবং নতুন নতুন প্রযুক্তি ও অটোমেশন সিস্টেম ডিজাইন করার প্রতি আমার গভীর আগ্রহ রয়েছে।</p>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <h2 class="section-title">কাজের অভিজ্ঞতা</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>Service Engineer & BMS Operator</h3>
+                <div class="company">ICEL Private Limited</div>
+                <p>বিল্ডিং ম্যানেজমেন্ট সিস্টেম (BMS) সার্বক্ষণিক মনিটরিং এবং রক্ষণাবেক্ষণ করা। ইন্ডাস্ট্রিয়াল সেফটি প্যানেল, ভেস্ডা (VESDA) সিস্টেম এবং ওয়াটার লিক ডিটেকশন সিস্টেমের নিখুঁত ওয়্যারিং, ট্রাবলশুটিং এবং টেকনিক্যাল সার্ভিসিং নিশ্চিত করা।</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">প্রজেক্টসমূহ</h2>
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <h3>Hand-Gesture Recognition System</h3>
+                <p>Python-এর OpenCV এবং MediaPipe লাইব্রেরি ব্যবহার করে তৈরি একটি কম্পিউটার ভিশন প্রজেক্ট। এর মাধ্যমে হাতের ইশারায় কম্পিউটারের ভলিউম এবং স্ক্রিন স্ক্রোলিং নিখুঁতভাবে নিয়ন্ত্রণ করা যায়।</p>
+                <span class="tag">Python</span>
+                <span class="tag">OpenCV</span>
+                <span class="tag">MediaPipe</span>
+            </div>
+            <!-- Project 2 -->
+            <div class="project-card">
+                <h3>Control System Analysis & Simulation</h3>
+                <p>MATLAB ব্যবহার করে বিভিন্ন জটিল কন্ট্রোল সিস্টেমের ব্লক ডায়াগ্রাম রিডাকশন এবং সিস্টেমের স্ট্যাবিলিটি পরীক্ষার জন্য Root Locus ও Nyquist Plots ডিজাইন।</p>
+                <span class="tag">MATLAB</span>
+                <span class="tag">Control Systems</span>
+            </div>
+            <!-- Project 3 -->
+            <div class="project-card">
+                <h3>Industrial Automation & Safety Loop Repair</h3>
+                <p>কাজের অভিজ্ঞতার অংশ হিসেবে ১৭টি ড্যামেজড স্মোক ডিটেক্টর চিহ্নিতকরণ এবং সম্পূর্ণ লুপ ক্যাবলিং ও রিপেয়ারিংয়ের মাধ্যমে ফায়ার সেফটি সিস্টেম পুনরায় সচল করা।</p>
+                <span class="tag">BMS</span>
+                <span class="tag">VESDA</span>
+                <span class="tag">Automation</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title">কারিগরি দক্ষতা (Skills)</h2>
+        <div class="skills-container">
+            <div class="skill-badge">Building Management System (BMS)</div>
+            <div class="skill-badge">Python (OpenCV & MediaPipe)</div>
+            <div class="skill-badge">MATLAB & Simulation</div>
+            <div class="skill-badge">Power Electronics (SCR, Inverter)</div>
+            <div class="skill-badge">Industrial Panel Wiring & Troubleshooting</div>
+            <div class="skill-badge">VESDA & Fire Safety Systems</div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">যোগাযোগ</h2>
+        <div class="contact-info">
+            <p>আপনার কোনো প্রজেক্ট বা ক্যারিয়ারের সুযোগ নিয়ে আলোচনা করতে চাইলে সরাসরি যোগাযোগ করতে পারেন:</p>
+            <p><strong>ইমেইল:</strong> souravsutradhar1405@gmail.com</p>
+            <p><strong>লিঙ্কডইন:</strong> https://www.linkedin.com/in/sourav-sutradhar-1405abc/</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Sourav Sutradhar. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
